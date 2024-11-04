@@ -10,7 +10,7 @@ setup(
     author_email="adam@adamcharnock.com",
     packages=find_packages(),
     scripts=[],
-    url="https://github.com/adamcharnock/django-adminlte2",
+    url="https://github.com/adamcharnock/django-adminlte4",
     license="MIT",
     description="Admin LTE templates, admin theme, and template tags for Django",
     long_description=open("README.rst").read() if exists("README.rst") else "",
