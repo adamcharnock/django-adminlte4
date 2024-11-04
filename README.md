@@ -35,7 +35,7 @@ Install as per the above installation instructions. The django admin UI should t
 Documentation
 -------------
 
-Can be found at: http://django-adminlte2.readthedocs.io
+TODO
 
 Credits
 -------
@@ -45,9 +45,6 @@ This project a based heavily on work by the following:
 * dnaextrim for [django_adminlte_x]
 * beastbikes for [django-adminlte]
 
-django-adminlte2 is packaged using [seed].
-
-  [seed]: https://github.com/adamcharnock/seed/
   [django_adminlte_x]: https://github.com/dnaextrim/django_adminlte_x
   [django-adminlte]: https://github.com/beastbikes/django-adminlte/
-  [base template]: https://github.com/adamcharnock/django-adminlte2/blob/master/django_adminlte/templates/adminlte/base.html
+  [base template]: https://github.com/adamcharnock/django-adminlte4/blob/master/django_adminlte/templates/adminlte/base.html

@@ -35,7 +35,6 @@ INTERNAL_IPS = ["127.0.0.1"]
 INSTALLED_APPS = [
     "example_project.app",
     "django_adminlte",
-    "django.contrib.contenttypes",
     "django.contrib.staticfiles",
     "debug_toolbar",
 ]
