@@ -4,7 +4,6 @@ from django import template
 from django.conf import settings
 from django.urls import reverse
 
-from django_adminlte.compat import is_authenticated
 
 register = template.Library()
 
@@ -16,12 +15,13 @@ def logout_url():
 
 @register.simple_tag(takes_context=True)
 def avatar_url(context, size=None, user=None):
-    # TODO: Make behaviour configurable
-    user = context['request'].user if user is None else user
-    return 'https://www.gravatar.com/avatar/{hash}?s={size}&d=mm'.format(
-        hash=md5(user.email.encode('utf-8')).hexdigest() if is_authenticated(user) else '',
-        size=size or '',
-    )
+    user = user or getattr(context['request'], 'user', None)
+    if user and user.is_authenticated:
+        hash = md5(user.email.encode('utf-8')).hexdigest()
+    else:
+        hash = ''
+
+    return f'https://www.gravatar.com/avatar/{hash}?s={size}&d=mm'
 
 
 @register.simple_tag(takes_context=True)

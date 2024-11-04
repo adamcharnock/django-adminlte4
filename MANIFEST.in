@@ -22,5 +22,4 @@ recursive-include django_adminlte *.svg
 recursive-include django_adminlte *.ttf
 recursive-include django_adminlte *.woff
 recursive-include django_adminlte *.woff2
-recursive-include django_adminlte_theme *.html
 recursive-include example_project *.html
