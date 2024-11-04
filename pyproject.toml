@@ -17,3 +17,24 @@ django-debug-toolbar = "^4.4.6"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+target-version = ['py312']
+exclude = '''
+/(
+  # Defaults
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | venv
+  | _build
+  | buck-out
+  | build
+  | dist
+
+  | node_modules
+  | migrations
+)/
+'''
