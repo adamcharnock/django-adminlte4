@@ -1,5 +1,4 @@
-AdminLTE Templates, Template Tags, and Admin Theme for Django
-=============================================================
+# AdminLTE Templates for Django
 
 [![pypi_badge](https://badge.fury.io/py/django-adminlte4.png)](pypi.python.org/pypi/django-adminlte4)
 
@@ -8,8 +7,7 @@ to Django developers in the form of standard base templates.
 
 Note: This does not style Django's built-in Admin interface.
 
-Installation
-------------
+## Installation
 
 Installation using pip:
 
@@ -23,14 +21,12 @@ Add to installed apps:
         ...
     ]
 
-Usage
------
+## Usage
 
 The [base template] is designed to be highly customisable. Template blocks are provided to
 allow you to hook in customisations as you wish
 
-Credits
--------
+## Credits
 
 This project a based heavily on work by the following:
 
@@ -38,6 +34,7 @@ This project a based heavily on work by the following:
 * dnaextrim for [django_adminlte_x]
 * beastbikes for [django-adminlte]
 
+  [django_adminlte4]: https://github.com/adamcharnock/django-adminlte4
   [django_adminlte2]: https://github.com/adamcharnock/django-adminlte2
   [django_adminlte_x]: https://github.com/dnaextrim/django_adminlte_x
   [django-adminlte]: https://github.com/beastbikes/django-adminlte/
