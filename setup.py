@@ -4,7 +4,7 @@ from os.path import exists
 from setuptools import setup, find_packages
 
 setup(
-    name="django-adminlte2",
+    name="django-adminlte4",
     version=open("VERSION").read().strip(),
     author="Adam Charnock",
     author_email="adam@adamcharnock.com",
