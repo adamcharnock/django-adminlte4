@@ -17,10 +17,8 @@
 
     {% block extra_head %}{% endblock %}
 </head>
-<body class="{% block transition_class %}hold-transition{% endblock %} {% block skin_class %}skin-blue{% endblock %} {% block sidebar_class %}sidebar-mini{% endblock %} {% block body_class %}{% block bodyclass %}{% endblock %}{% endblock %}">
-
-{% block body %}
-    <div class="wrapper">
+<body class="sidebar-expand-lg bg-body-tertiary {% block body_class %}{% endblock %}">
+    <div class="app-wrapper">
         {% block nav_header %}
             {% include 'adminlte/lib/_main_header.html' %}
         {% endblock %}
@@ -29,53 +27,73 @@
             {% include 'adminlte/lib/_main_sidebar.html' %}
         {% endblock %}
 
-        {% block content_wrapper %}
-        <div class="content-wrapper">
-            {% block content_header %}
-                <section class="content-header">
-                    {% block no_heading %}
-                        <h1>
-                            {% block page_name %}{% endblock %}
+        {% block app_main_outer %}
+        <main class="app-main">
+            {% block app_content_header_outer %}
+            <div class="app-content-header">
+                <div class="container-fluid">
+                    <div class="row">
+                        {% block no_heading %}
+                        <div class="col-sm-6">
+                            <h3 class="mb-0">
+                                {% block page_name %}{% endblock %}
+                            </h3>
                             <div class="header-actions">
                                 {% block page_actions %}{% endblock %}
                             </div>
                             {% block no_description %}
                             <small>{% block page_description %}{% endblock %}</small>
                             {% endblock %}
-                        </h1>
-                        {% block breadcrumbs %}
-                            {# Breadcrumb implementation left to developers #}
-                        {% endblock %}
-                    {% endblock no_heading %}
-                </section>
-            {% endblock %}
+                        </div>
+                        {% block no_breadcrumbs %}
+                        <div class="col-sm-6">
+                            {% block breadcrumbs %}
+                                {# Breadcrumb implementation left to developers #}
+                                {% comment %}
+                                <ol class="breadcrumb float-sm-end">
+                                    <li class="breadcrumb-item">
+                                        <a href="#">Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item active" aria-current="page">
+                                                                        Unfixed Layout
+                                                                    </li>
+                                </ol>
+                                {% endcomment %}
+                            {% endblock breadcrumbs %}
+                        </div>
+                        {% endblock no_breadcrumbs %}
+                        {% endblock no_heading %}
+                    </div>
+                    <!--end::Row-->
+                </div>
+                <!--end::Container-->
+            </div>
+            {% endblock app_content_header_outer %}
 
-            {% block content_outer %}
-            <section class="content">
+            {% block app_content_outer %}
+            <div class="app-content">
                 {% block messages %}
                     {% include 'adminlte/lib/_messages.html' %}
                 {% endblock %}
 
-                {% block content_block_wrap %}
-                    {% block content %}{% endblock %}
-                {% endblock %}
-            </section>
-            {% endblock %}
-
-        </div>
-        {% endblock content_wrapper %}
+                <div class="container-fluid">
+                    {% block content_block_wrap %}
+                        {% block content %}{% endblock %}
+                    {% endblock %}
+                </div>
+            </div>
+            {% endblock app_content_outer %}
+        </main>
+        {% endblock app_main_outer %}
 
         {% block nav_footer %}
             {% include 'adminlte/lib/_main_footer.html' %}
         {% endblock %}
 
     </div>
-{% endblock body %}
 
-{% block javascript %}
-{% include 'adminlte/lib/_scripts.html' %}
-{% endblock %}
+    {% block javascript %}
+    {% include 'adminlte/lib/_scripts.html' %}
+    {% endblock %}
 
-{% block extra_foot %}{% endblock %}
 </body>
-</html>

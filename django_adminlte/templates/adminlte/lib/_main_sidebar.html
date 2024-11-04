@@ -1,53 +1,67 @@
 {% load adminlte_helpers %}
 <!-- Left side column. contains the sidebar -->
-<aside class="main-sidebar">
-    <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar">
-        <!-- Sidebar user panel -->
-        {% block user_panel %}
-        <div class="user-panel">
-            <div class="pull-left image">
-                <img src="{% avatar_url size=90 %}" class="img-circle" alt="User Image">
-            </div>
-            <div class="pull-left info">
-                <p>{% firstof request.user.get_full_name request.user.username %}</p>
-            </div>
-        </div>
-        {% endblock %}
+<aside class="app-sidebar bg-{% block sidebar_bg %}light{% endblock %} {% block sidebar_classes %}shadow{% endblock %}" data-bs-theme="{% block sidebar_theme %}light{% endblock %}">
+    {% block logo %}
+    <!--begin::Sidebar Brand-->
+    <div class="sidebar-brand">
+        <!--begin::Brand Link-->
+        <a href="{% block logo_href %}/{% endblock %}" class="brand-link">
+            {% block no_logo_img %}
+            <img src="{% block logo_img %}/{% endblock %}" alt="{% block logo_alt %}Logo{% endblock %}" class="{% block logo_classes %}brand-image opacity-75 shadow{% endblock %}">
+            {% endblock %}
+            <span class="brand-text fw-light">{% block logo_text %}AdminLTE 4{% endblock %}</span>
+        </a>
+        <!--end::Brand Link-->
+    </div>
+    {% endblock %}
 
-        {% block form %}{% endblock %}
+    <!--begin::Sidebar Wrapper-->
+    <div class="sidebar-wrapper">
+        {% block sidebar_top %}{% endblock %}
 
-        <!-- sidebar menu: : style can be found in sidebar.less -->
-        {% block nav_links_ul %}
-        <ul class="sidebar-menu">
-            {% block nav_links_outer %}
-            <li class="header">{% block nav_heading %}MAIN NAVIGATION{% endblock %}</li>
+        <nav class="mt-2">
+            {% block nav_links_ul %}
+            <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu" data-accordion="false">
+                {% block nav_links_outer %}
+                    {% block nav_heading_outer %}
+                    <li class="nav-header">{% block nav_heading %}MAIN NAVIGATION{% endblock %}</li>
+                    {% endblock %}
 
-            {% block nav_links %}
-                <li>
-                    <a href="#">
-                        <i class="fa fa-dashboard"></i> <span>Example link</span>
-                    </a>
-                </li>
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-group"></i> <span>Sub menu</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-user"></i> Another link
+                    {% block nav_links %}
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon bi bi-speedometer"></i>
+                                <p>
+                                    Dashboard
+                                    <i class="nav-arrow bi bi-chevron-right"></i>
+                                </p>
+                            </a>
+
+                            <ul class="nav nav-treeview">
+                               <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="nav-icon bi bi-circle"></i>
+                                        <p>Sub link 1</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="nav-icon bi bi-circle"></i>
+                                        <p>Sub link 2</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon bi bi-palette"></i>
+                                <p>Another page</p>
                             </a>
                         </li>
-                    </ul>
-                </li>
-            {% endblock nav_links %}
-            {% endblock nav_links_outer %}
-        </ul>
-        {% endblock nav_links_ul %}
-    </section>
-    <!-- /.sidebar -->
+                    {% endblock nav_links %}
+                {% endblock nav_links_outer %}
+            </ul>
+            {% endblock nav_links_ul %}
+        </nav>
+    </div>
 </aside>

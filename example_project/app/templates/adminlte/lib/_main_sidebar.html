@@ -1,14 +1,19 @@
 {% extends 'adminlte/lib/_main_sidebar.html' %}
 
+{% block no_logo_img %}{% endblock %}
+{% block logo_text %}Example Site{% endblock %}
+
 {% block nav_links %}
-    <li>
-        <a href="/some/url">
-            <i class="fa fa-dashboard"></i> <span>Example Project</span>
+    <li class="nav-item">
+        <a href="/some/url" class="nav-link">
+            <i class="nav-icon bi bi-circle-fill"></i>
+            <p>Example Project</p>
         </a>
     </li>
-    <li>
-        <a href="/some/url">
-            <i class="fa fa-user"></i> <span>Users</span>
+    <li class="nav-item">
+        <a href="/some/url" class="nav-link">
+            <i class="nav-icon bi bi-circle-fill"></i>
+            <p>Users</p>
         </a>
     </li>
 {% endblock nav_links %}
