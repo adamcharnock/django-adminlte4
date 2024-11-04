@@ -3,9 +3,10 @@ AdminLTE Templates, Template Tags, and Admin Theme for Django
 
 [![pypi_badge](https://badge.fury.io/py/django-adminlte4.png)](pypi.python.org/pypi/django-adminlte4)
 
-Django AdminLTE2 provides the functionality of the AdminLTE2 theme
-to developers in the form of standard base templates. Optional styling for
-Django's built-in admin interface is also provided.
+Django AdminLTE2 provides the functionality of the AdminLTE4 theme
+to developers in the form of standard base templates.
+
+Note: This does not style Django's built-in Admin interface.
 
 Installation
 ------------
@@ -28,9 +29,6 @@ Usage
 The [base template] is designed to be highly customisable. Template blocks are provided to
 allow you to hook in customisations as you wish
 
-### Admin Theme Usage
-
-Install as per the above installation instructions. The django admin UI should then change as expected.
 
 Documentation
 -------------
