@@ -1,5 +1,5 @@
 {% load static %}<!DOCTYPE html>
-<html>
+<html lang="{% block html_lang %}en{% endblock %}">
 <head>
     {% block title_outer %}
         <title>{% block title %}{{ site.name }}{% endblock %}</title>
