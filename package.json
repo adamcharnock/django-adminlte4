@@ -1,7 +1,7 @@
 {
-  "name": "habari",
+  "name": "django-adminlte4",
   "version": "1.0.0",
-  "description": "FuturePump Habari",
+  "description": "Django Admin LTE 4",
   "dependencies": {
     "admin-lte": "^2.3.6",
     "bootstrap": "^3.3.7",

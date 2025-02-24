@@ -6,6 +6,10 @@ authors = ["Adam Charnock <adam@adamcharnock.com>"]
 license = "MIT"
 readme = "README.md"
 
+packages = [
+    { include = "django_adminlte" }
+]
+
 [tool.poetry.dependencies]
 python = "^3.12"
 django = "^5.1.2"
