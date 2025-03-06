@@ -18,6 +18,7 @@
     {% block extra_head %}{% endblock %}
 </head>
 <body class="sidebar-expand-lg bg-body-tertiary {% block body_class %}{% endblock %}">
+    {% block body %}
     <div class="app-wrapper">
         {% block nav_header %}
             {% include 'adminlte/lib/_main_header.html' %}
@@ -73,7 +74,9 @@
             {% block app_content_outer %}
             <div class="app-content">
                 {% block messages %}
-                    {% include 'adminlte/lib/_messages.html' %}
+                    <div class="container-fluid">
+                        {% include 'adminlte/lib/_messages.html' %}
+                    </div>
                 {% endblock %}
 
                 <div class="container-fluid">
@@ -91,6 +94,7 @@
         {% endblock %}
 
     </div>
+    {% endblock body %}
 
     {% block javascript %}
     {% include 'adminlte/lib/_scripts.html' %}
